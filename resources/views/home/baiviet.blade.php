@@ -165,4 +165,5 @@ section.baiviet {
     </div>
   </div>
 </section>
+@include('partials.footer')
 @endsection

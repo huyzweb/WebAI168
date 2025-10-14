@@ -110,18 +110,8 @@ Route::post('/ebook/sua/{id}', [EbookController::class, 'sua'])->name('ebook.sua
 // Xóa Ebook
 Route::get('/ebook/xoa/{id}', [EbookController::class, 'xoa'])->name('ebook.xoa');
 
-// Ebook - quản lý
-Route::get('/ebook', [EbookController::class, 'index'])->name('ebook.index');
-Route::post('/ebook/them', [EbookController::class, 'them'])->name('ebook.them');
 
-// Hiển thị form sửa ebook
-Route::get('/ebook/sua/{id}', [EbookController::class, 'edit'])->name('ebook.edit');
 
-// Xử lý cập nhật ebook
-Route::post('/ebook/sua/{id}', [EbookController::class, 'sua'])->name('ebook.sua');
-
-// Xóa ebook
-Route::get('/ebook/xoa/{id}', [EbookController::class, 'xoa'])->name('ebook.xoa');
 
 
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
@@ -129,25 +119,9 @@ Route::post('/register', [AuthController::class, 'register'])->name('register.po
 
 
 // Trang quản lý Ebook (Admin)
-Route::get('/ebook', [EbookController::class, 'index'])->name('ebook.index');
-
-// Thêm Ebook
-Route::get('/ebook/them', [EbookController::class, 'formThem'])->name('ebook.form');
-Route::post('/ebook/them', [EbookController::class, 'them'])->name('ebook.them');
-
-// Sửa Ebook
-Route::get('/ebook/sua/{id}', [EbookController::class, 'edit'])->name('ebook.edit');
-Route::post('/ebook/sua/{id}', [EbookController::class, 'sua'])->name('ebook.sua');
-
-// Xóa Ebook
-Route::get('/ebook/xoa/{id}', [EbookController::class, 'xoa'])->name('ebook.xoa');
 
 
-// Danh sách Ebook
-Route::get('/home/ebook', [EbookController::class, 'index'])->name('home.ebook');
-
-// Chi tiết Ebook
-Route::get('/home/ebook/{id}', [EbookController::class, 'show'])->name('home.ebook.show');
+ Route::get('/ebook', [EbookController::class, 'index'])->name('ebook.index');
 Route::get('/price', function () {
     return view('home.price');
 });

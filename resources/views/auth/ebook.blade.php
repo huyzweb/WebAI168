@@ -44,7 +44,9 @@
     </td>
     <td>
       @if($e->hinhanh)
-      <img src="{{ asset('storage/'.$e->hinhanh) }}" alt="cover" width="80">
+      <img src="{{ asset('upload/ebook_covers/'.$e->hinhanh) }}" alt="cover" class="w-12 rounded-md">
+
+
       @endif
     </td>
   </tr>

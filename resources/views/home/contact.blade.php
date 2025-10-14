@@ -178,4 +178,5 @@
 }
 
 </style>
+@include('partials.footer')
 @endsection

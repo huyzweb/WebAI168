@@ -28,4 +28,5 @@
     {{-- Phân trang nếu dùng paginate --}}
     {{-- {{ $tintuc->links() }} --}}
 </div>
+@include('partials.footer')
 @endsection
