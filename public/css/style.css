@@ -1,0 +1,915 @@
+/* ==============================
+ VN168 / AI168 - STYLE.CSS
+ Màu tím hồng neon + hiệu ứng hiện đại
+============================== */
+
+:root {
+  --blue-50: #f3f8ff;
+  --blue-100: #eaf3ff;
+  --blue-200: #d9eaff;
+  --blue-300: #bfe0ff;
+  --blue-400: #9dd0ff;
+  --brand-1: #c084fc; /* tím hồng nhạt */
+  --brand-2: #a855f7; /* tím đậm */
+  --ink: #0f172a;
+  --ink-2: #334155;
+  --muted: #64748b;
+}
+
+/* ============ GLOBAL ============ */
+html, body {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1000px 600px at 85% 90%, #f0e8ff 0, transparent 55%),
+    linear-gradient(180deg,#faf8ff 0%,#f7f0ff 60%,#ffffff 100%);
+  overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; }
+
+/* ============ BUTTONS ============ */
+.btn-primary {
+  background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+  border: 0; color: #fff;
+  box-shadow: 0 8px 24px -12px rgba(168,85,247,.55);
+  transition: all .25s ease;
+}
+.btn-primary:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+.btn-outline-light {
+  border-color: #e0d2ff !important;
+  color: #fff !important;
+}
+.btn-outline-light:hover {
+  background: #e0d2ff;
+  color: #111 !important;
+}
+
+/* ============ NAVBAR ============ */
+.navbar-area {
+  background: rgba(255,255,255,.8);
+  backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid rgba(15,23,42,.06);
+}
+.navbar-menu {
+  box-shadow: inset 0 0 0 1px rgba(15,23,42,.06);
+}
+.navbar-menu .nav-link {
+  color: var(--ink-2);
+  padding: .5rem .85rem;
+  font-weight: 600;
+  transition: color .25s ease;
+}
+.navbar-menu .nav-link:hover,
+.navbar-menu .nav-link.active {
+  color: var(--brand-2);
+}
+.logo { height: 36px; }
+
+.btn-circle, .btn-sm-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.btn-sm-circle { width: 36px; height: 36px; }
+.btn-circle { width: 42px; height: 42px; }
+.chat-dot { position: absolute; right: -4px; top: -4px; }
+
+/* ============ HERO ============ */
+.hero {
+  --shadow: 0 30px 70px -35px rgba(2,132,199,.35), inset 0 0 0 1px rgba(15,23,42,.06);
+  background:
+    radial-gradient(900px 400px at 70% 30%, rgba(228, 210, 255, 1) 0, rgba(255,255,255,0) 60%),
+    linear-gradient(180deg,#faf5ff 0%,#f5e9ff 60%,rgba(230,210,255,0.8) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.hero h4 {
+  color: #ff66cc;
+  text-shadow: 0 0 8px rgba(255,51,133,0.6);
+}
+.hero h1 {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.hero .text-pink {
+  color: #ff5ef7;
+  text-shadow: 0 0 8px rgba(255,51,200,0.5);
+}
+.hero p {
+  color: #eaeaea;
+  font-weight: 500;
+  text-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+.hero .robot-wrap {
+  position: relative;
+  display: inline-block;
+  padding: 16px;
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+.hero .robot {
+  width: 320px;
+  max-width: 82vw;
+  filter: drop-shadow(0 12px 24px rgba(2,132,199,.18));
+  animation: floaty 8s ease-in-out infinite;
+}
+.hero .eye {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #111;
+  border-radius: 50%;
+  top: 54%;
+  box-shadow: 0 0 0 4px #ffb3ff66;
+}
+.hero .eye.left { left: 112px; }
+.hero .eye.right { left: 162px; }
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ============ FEATURE ============ */
+.feature-item {
+  background: #fff;
+  border: 1px solid rgba(15,23,42,.06);
+  border-radius: 18px;
+  box-shadow: 0 20px 40px -24px rgba(162,90,255,.25);
+  transition: all .25s ease;
+}
+.feature-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px -26px rgba(162,90,255,.4);
+}
+.feature-icon {
+  background: linear-gradient(180deg,#f1fbff,#ffffff);
+  border-radius: 14px;
+  border: 1px solid rgba(15,23,42,.06);
+  width: 64px; height: 64px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ============ ABOUT ============ */
+.about .about-item-content {
+  box-shadow: 0 24px 60px -30px rgba(162,90,255,.25);
+}
+.counter-item {
+  border: 1px solid rgba(15,23,42,.08);
+  background: #fff;
+}
+.counter-counting .text-primary {
+  color: var(--brand-2) !important;
+}
+
+/* ============ SERVICE ============ */
+.service-item {
+  background: #fff;
+  border: 1px solid rgba(15,23,42,.06);
+  border-radius: 16px;
+  box-shadow: 0 18px 48px -26px rgba(162,90,255,.28);
+  transition: all .25s ease;
+}
+.service-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 64px -28px rgba(162,90,255,.4);
+}
+.service-icon {
+  position: absolute;
+  left: 14px; bottom: 14px;
+  background: rgba(255,255,255,.95);
+  border-radius: 14px;
+  box-shadow: 0 10px 26px -16px rgba(162,90,255,.45);
+}
+
+/* ============ BLOG ============ */
+.blog-item {
+  border: 1px solid rgba(15,23,42,.08);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 20px 48px -24px rgba(162,90,255,.25);
+  transition: all .25s ease;
+}
+.blog-item:hover { transform: translateY(-6px); }
+.blog-category {
+  position: absolute;
+  left: 12px; bottom: 12px;
+  background: rgba(255,255,255,.92);
+  color: #9333ea;
+  font-weight: 700;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px -12px rgba(0,0,0,.25);
+}
+
+/* ============ TEAM ============ */
+.team-item {
+  background: #fff;
+  border: 1px solid rgba(15,23,42,.06);
+  border-radius: 16px;
+  box-shadow: 0 16px 42px -24px rgba(162,90,255,.25);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.team-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 60px -28px rgba(162,90,255,.35);
+}
+.team-img { width: 150px; height: 150px; margin: 20px auto 12px; }
+.team-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+/* ============ FAQ ============ */
+.accordion-button {
+  font-weight: 600;
+  color: var(--brand-2);
+}
+.accordion-button:not(.collapsed) {
+  background: #f4eaff;
+  color: var(--brand-2);
+  box-shadow: none;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  color: #fff;
+  background: linear-gradient(135deg, #6a11cb 0%, #ff6a00 100%);
+  position: relative;
+  overflow: hidden;
+  margin-top: 48px;
+}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 16px 28px;
+  display: grid;
+  grid-template-columns: 1.6fr 2fr;
+  gap: 32px;
+}
+.footer-right {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.footer-column h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.footer-column ul { list-style: none; padding: 0; margin: 0; }
+.footer-column li {
+  margin-bottom: 6px;
+  font-size: 15px;
+  opacity: .9;
+}
+.footer a { color: #fff; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.copyright {
+  background: rgba(0,0,0,.15);
+  text-align: center;
+  color: #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width:992px) {
+  .footer-container { grid-template-columns: 1fr; }
+  .footer-right { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width:576px) {
+  .footer-right { grid-template-columns: 1fr; }
+}
+
+
+/* ===== Floating Icon cho Service Cards ===== */
+.icon-float {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+  z-index: 2;
+}
+
+.service-item {
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, .08);
+  border-radius: 16px;
+  box-shadow: 0 18px 48px -26px rgba(2,132,199,.28);
+  transition: all .3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px -28px rgba(2,132,199,.4);
+}
+
+
+
+/* ===== BLOG (Giá trị cốt lõi) ===== */
+.blog-item {
+  position: relative;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 18px 48px -26px rgba(2,132,199,.28);
+  transition: all 0.3s ease;
+  overflow: visible; /* ✅ cho phép icon trồi ra ngoài */
+}
+
+.blog-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px -28px rgba(2,132,199,.4);
+}
+
+/* Ảnh */
+.blog-img img {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+/* Nội dung */
+.blog-body {
+  text-align: center;
+  padding: 2rem 1.5rem 2.5rem;
+}
+
+/* Icon tròn nổi đè lên giữa mép ảnh */
+.icon-float-blog {
+  position: absolute;
+  top: 170px; /* ✅ căn giữa mép ảnh */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+  z-index: 10;
+}
+
+/* Gradient chữ */
+.text-gradient {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Tiêu đề và mô tả */
+.blog-body h5 {
+  font-size: 1.3rem;
+  margin-top: 1.8rem;
+}
+
+.blog-body p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Hover icon phát sáng */
+.icon-float-blog:hover {
+  box-shadow: 0 0 20px 8px rgba(106,17,203,0.4);
+  transition: all 0.4s ease;
+}
+
+
+/* ===== Hiệu ứng chữ nổi & gradient động ===== */
+.gradient-text {
+  font-weight: 800;
+  font-size: 3rem;
+  background: linear-gradient(
+    90deg,
+    #ff00ff,
+    #9b5cff,
+    #00d4ff,
+    #ff00ff
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s ease infinite;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hiệu ứng nổi bật cho tiêu đề */
+.hero-title {
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-transform: none;
+  transition: all 0.4s ease;
+}
+
+.hero-title:hover {
+  transform: scale(1.04);
+  text-shadow: 0 0 30px rgba(255, 0, 255, 0.5), 0 0 60px rgba(0, 212, 255, 0.4);
+}
+/* ✅ Force Hero Description Black & Bold */
+.hero-desc {
+  color: #000 !important;            /* Ép đen tuyệt đối */
+  font-weight: 700 !important;       /* Đậm rõ ràng */
+  font-size: 1.2rem !important;      /* Dễ đọc */
+  line-height: 1.8;
+  opacity: 1 !important;             /* Hủy hiệu ứng làm mờ */
+  filter: none !important;
+  text-shadow: none !important;      /* Bỏ ánh sáng tím */
+}
+
+/* Nếu hero có màu sáng, thêm nền mờ nhẹ để dễ đọc */
+.hero-desc-bg {
+  background: rgba(255,255,255,0.6);
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+/* === Nút Xem Demo nổi bật === */
+.hero .btn-outline-light,
+.btn-outline-light {
+  color: #5f00ff !important;            /* tím đậm thương hiệu */
+  border: 2px solid #5f00ff !important;
+  background: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(95, 0, 255, 0.25);
+}
+
+/* Hiệu ứng hover (sáng tím, nổi lên) */
+.hero .btn-outline-light:hover,
+.btn-outline-light:hover {
+  color: #fff !important;
+  background: linear-gradient(90deg, #7b2fff, #ff00ff);
+  box-shadow: 0 0 20px rgba(123, 47, 255, 0.6), 0 0 40px rgba(255, 0, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(123, 47, 255, 0.4), 0 0 20px rgba(255, 0, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(123, 47, 255, 0.7), 0 0 45px rgba(255, 0, 255, 0.6);
+  }
+}
+
+.btn-outline-light.glow {
+  animation: glowPulse 2s infinite ease-in-out;
+}
+
+.btn.btn-primary {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff !important;
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(100, 0, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn.btn-primary:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+  box-shadow: 0 8px 25px rgba(100, 0, 255, 0.6);
+}
+
+.btn.btn-primary:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 10px rgba(100, 0, 255, 0.3);
+}
+
+
+.btn-glow {
+  background: linear-gradient(135deg, #7a00ff 0%, #ff00cc 100%);
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 28px;
+  border-radius: 50px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 18px rgba(140, 0, 255, 0.4);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-glow i {
+  font-size: 15px;
+}
+
+.btn-glow:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #ff00cc 0%, #7a00ff 100%);
+  box-shadow: 0 8px 25px rgba(170, 0, 255, 0.6);
+}
+
+.btn-glow:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 8px rgba(120, 0, 255, 0.3);
+}
+
+/* ================================
+   Nút Xem Demo (phụ)
+   ================================ */
+.btn-outline-gradient {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 28px;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(135deg, #7a00ff 0%, #ff00cc 100%) border-box;
+  color: #7a00ff;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.35s ease;
+}
+
+.btn-outline-gradient i {
+  font-size: 15px;
+}
+
+.btn-outline-gradient:hover {
+  background: linear-gradient(135deg, #7a00ff 0%, #ff00cc 100%);
+  color: #fff !important;
+  border-color: transparent;
+  box-shadow: 0 8px 25px rgba(160, 0, 255, 0.5);
+  transform: translateY(-3px);
+}
+
+.btn-outline-gradient:active {
+  transform: scale(0.96);
+  box-shadow: 0 3px 12px rgba(140, 0, 255, 0.4);
+}
+
+/* Hiệu ứng nhịp sáng nhẹ cho nút chính */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 12px rgba(160, 0, 255, 0.4); }
+  50% { box-shadow: 0 0 25px rgba(255, 0, 255, 0.7); }
+  100% { box-shadow: 0 0 12px rgba(160, 0, 255, 0.4); }
+}
+
+.btn-glow {
+  animation: glowPulse 3s infinite;
+}
+
+
+
+/* ===============================
+   FEATURE ITEM
+   =============================== */
+.feature-item {
+  background: #fff;
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.feature-item h4,
+.feature-item p,
+.feature-item .btn {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+/* Icon tròn trên đầu */
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6a00ff, #00c6ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 12px rgba(122, 0, 255, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.feature-icon i {
+  font-size: 28px;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+/* Hover icon */
+.feature-item:hover .feature-icon i {
+  transform: scale(1.15);
+}
+
+/* Hover hiệu ứng nền */
+.feature-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0066ff 0%, #7a00ff 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+  border-radius: 18px;
+}
+
+.feature-item:hover::before {
+  opacity: 1;
+}
+
+.feature-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(122, 0, 255, 0.4);
+}
+
+.feature-item:hover h4,
+.feature-item:hover p {
+  color: #fff;
+}
+
+/* Nút Learn More */
+.feature-item .btn {
+  background: linear-gradient(135deg, #7a00ff 0%, #00c6ff 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  border: none;
+  border-radius: 50px;
+  padding: 8px 22px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(122, 0, 255, 0.3);
+}
+
+.feature-item .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(122, 0, 255, 0.5);
+}
+
+
+/* Cảm nhận khách hàng */
+.testimonial-item {
+  background: #fff;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(123, 0, 255, 0.08);
+}
+
+.testimonial-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(122, 0, 255, 0.2);
+  background: linear-gradient(135deg, #ffffff 0%, #f5eaff 100%);
+}
+
+.testimonial-item img {
+  border: 3px solid #a855ff;
+  box-shadow: 0 5px 10px rgba(122, 0, 255, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-item:hover img {
+  transform: scale(1.05);
+}
+
+.testimonial h4 {
+  color: #3d0066;
+}
+
+.testimonial p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.text-warning i {
+  color: #ffb400;
+}
+
+/* Ẩn nút điều hướng Owl Carousel */
+.owl-nav {
+  display: none !important;
+}
+
+/* Nút dăng nhập */
+.btn-outline-primary:hover {
+  color: #fff !important;
+  background: linear-gradient(135deg, #7a00ff, #ff00cc);
+  box-shadow: 0 0 15px rgba(140, 0, 255, 0.4);
+  transform: translateY(-2px);
+}
+.btn-outline-primary:hover {
+  color: #fff !important;
+  background: linear-gradient(135deg, #7a00ff, #ff00cc);
+  box-shadow: 0 0 15px rgba(140, 0, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* thanh menu */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.navbar-menu .nav-link {
+  color: #222;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.navbar-menu .nav-link:hover,
+.navbar-menu .nav-link.active {
+  color: #7a00ff;
+  font-weight: 600;
+}
+
+/* Nút Đăng nhập gradient */
+.btn-login-gradient {
+  border: none;
+  background: linear-gradient(135deg, #7a00ff 0%, #ff00cc 100%);
+  color: #fff !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(122, 0, 255, 0.4);
+}
+
+.btn-login-gradient:hover {
+  background: linear-gradient(135deg, #ff00cc 0%, #7a00ff 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(140, 0, 255, 0.6);
+}
+
+.btn-outline-primary:hover {
+  color: #fff !important;
+  background: linear-gradient(135deg, #7a00ff, #ff00cc);
+  box-shadow: 0 0 15px rgba(140, 0, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Nút Liên hệ tư vấn */
+.btn-consult {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff !important;
+  border: none;
+  transition: all 0.3s ease;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-consult:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(100, 0, 255, 0.4);
+}
+
+/* === Căn chung cho 2 nút === */
+.btn-consult,
+.btn-login-gradient {
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+/* === Liên hệ tư vấn === */
+.btn-consult {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff !important;
+  border: none;
+  box-shadow: 0 3px 10px rgba(100, 0, 255, 0.3);
+}
+
+.btn-consult:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(100, 0, 255, 0.4);
+}
+
+/* === Đăng nhập gradient tím hồng === */
+.btn-login-gradient {
+  background: linear-gradient(135deg, #7a00ff 0%, #ff00cc 100%);
+  color: #fff !important;
+  border: none;
+  box-shadow: 0 3px 10px rgba(140, 0, 255, 0.3);
+}
+
+.btn-login-gradient:hover {
+  background: linear-gradient(135deg, #ff00cc 0%, #7a00ff 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(140, 0, 255, 0.6);
+}
+
+/* === Hiệu ứng nhịp sáng nhẹ cho Đăng nhập === */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 8px rgba(140, 0, 255, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(255, 0, 255, 0.6); }
+  100% { box-shadow: 0 0 8px rgba(140, 0, 255, 0.3); }
+}
+
+.btn-login-gradient {
+  animation: glowPulse 3s infinite;
+}
+
+
+.btn-outline-primary {
+  border-color: #7a00ff;
+  color: #7a00ff;
+}
+.btn-outline-primary:hover {
+  background: linear-gradient(135deg, #7a00ff, #ff00cc);
+  color: #fff;
+  border: none;
+}
+
+/* Giữ thanh menu luôn hiển thị khi cuộn */
+.navbar-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+/* Chừa khoảng trống phía trên nội dung để không bị che */
+body {
+  padding-top: 90px; /* chỉnh bằng chiều cao header thực tế */
+}
+
+
+/*Bảng Giá */
+
+.navbar-menu .nav-link {
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.navbar-menu .nav-link:hover,
+.navbar-menu .nav-link.active {
+  background: linear-gradient(90deg, #9333ea, #ec4899);
+  color: #fff !important;
+}
+
+.btn-consult {
+  background: linear-gradient(90deg, #9333ea, #ec4899, #f97316);
+  color: #fff !important;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-consult:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.logout-btn {
+  font-size: 14px;
+  background: #ff4d6d;
+  border: none;
+  transition: 0.2s;
+}
+
+.logout-btn:hover {
+  opacity: 0.9;
+}
+
+.user-box {
+  background: linear-gradient(90deg, #f4e3ff, #e6d2ff);
+  border: 1px solid rgba(147, 51, 234, 0.15);
+}
