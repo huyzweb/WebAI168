@@ -128,6 +128,67 @@ section.baiviet {
   .baiviet .row { gap: 20px; }
   .baiviet .card-img-wrapper { height: 180px; }
 }
+/* ===== Nút trong footer card ===== */
+.baiviet .btn-baiviet {
+  display: inline-block;
+  background: linear-gradient(135deg, #7a00ff, #ff00cc);
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 7px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(122, 0, 255, 0.3);
+}
+
+.baiviet .btn-baiviet:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(122, 0, 255, 0.45);
+  opacity: 0.95;
+}
+/* ===== Nút trong footer card (chữ nổi - VN168 Neon Style) ===== */
+.baiviet .btn-baiviet {
+  display: inline-block;
+  background: linear-gradient(135deg, #7a00ff, #ff00cc);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13.5px;
+  letter-spacing: 0.3px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 12px rgba(122, 0, 255, 0.35);
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5), 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* Hiệu ứng ánh sáng nổi */
+.baiviet .btn-baiviet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
+  transition: all 0.5s ease;
+}
+
+.baiviet .btn-baiviet:hover::before {
+  left: 100%;
+}
+
+.baiviet .btn-baiviet:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(122, 0, 255, 0.55);
+  color: #fff;
+  text-shadow: 0 0 12px rgba(255,255,255,0.8), 0 0 18px rgba(255,255,255,0.7);
+}
+
 </style>
 
 <section class="baiviet">
@@ -151,13 +212,14 @@ section.baiviet {
           <p class="card-text">{{ Str::limit($bv->mota, 100) }}</p>
         </div>
         <div class="card-footer text-muted">
-          @if($bv->link)
-            @if($bv->loai == 'ebook')
-              📘 <a href="{{ $bv->link }}" target="_blank">Tải Ebook</a>
-            @else
-              🔗 <a href="{{ $bv->link }}" target="_blank">Xem chi tiết</a>
-            @endif
-          @endif
+         @if($bv->link)
+  @if($bv->loai == 'ebook')
+    <a href="{{ $bv->link }}" target="_blank" class="btn-baiviet">📘 Tải Ebook</a>
+  @else
+    <a href="{{ $bv->link }}" target="_blank" class="btn-baiviet">🔗 Xem chi tiết</a>
+  @endif
+@endif
+
           <div>{{ $bv->ngaydang ? \Carbon\Carbon::parse($bv->ngaydang)->format('Y-m-d') : '' }}</div>
         </div>
       </div>

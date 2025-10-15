@@ -138,3 +138,4 @@ Route::get('/ebook/sua/{id}', [EbookController::class, 'edit'])->name('ebook.edi
 Route::get('/home/ebook', [EbookController::class, 'homeList'])->name('home.ebook');
 Route::get('/home/ebook/{id}', [EbookController::class, 'show'])->name('home.ebook.show');
 
+Route::resource('ebook', EbookController::class);
